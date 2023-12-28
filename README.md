@@ -13,8 +13,6 @@ Welcome to the System Design Basics repository! This repository is a collection 
 7. [Maintainability](#maintainability)
 8. [Security](#security)
 9. [Resources](#resources)
-10. [Contributing](#contributing)
-11. [License](#license)
 
 ## Introduction
 
