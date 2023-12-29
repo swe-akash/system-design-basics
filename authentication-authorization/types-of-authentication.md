@@ -84,3 +84,25 @@ Token represents user's identity and permissions. It often have a limited lifesp
 - If a token is compromised, an attacker may gain unauthorized access.
 - Handling token expiration and refresh can be complex. If not managed correctly, users may need to re-authenticate frequently, leading to a less seamless user experience.
 - Revoking a token before its natural expiration can be challenging. Some systems implement token revocation lists, but these introduce additional complexity.
+
+
+## OAuth
+
+OAuth 2.0 (Open Authorization 2.0) is an authorization framework that allows third-party applications to access certain resources on behalf of a user without exposing the user's credentials to the application. OAuth 2.0 defines a standard for token-based authentication and authorization.
+
+- when a user tries to login, they are redirected to authorization server's authorization endpoint. The request includes the client ID, requested scope (permissions), redirect URI, and a response type, usually set to "code" for authorization code flow.
+- once authenticated, the user is asked to grant or deny permission to the client application. If the user grants permission, the authorization server issues an authorization code.
+- The client, with the obtained authorization code, sends a request to the token endpoint of the authorization server to exchange the code for an access token and, optionally, a refresh token.
+- The client can now use the access token to make requests to the resource server on behalf of the user. The resource server validates the access token and provides the requested resources if the token is valid and the client has the necessary permissions.
+
+##### PROS
+
+- OAuth 2.0 allows for fine-grained access control through the use of scopes. This enables users to grant specific permissions to third-party applications without sharing their credentials.
+- OAuth 2.0 uses tokens (access and refresh tokens) instead of sharing user credentials. This enhances security by reducing the exposure of sensitive information.
+- OAuth 2.0 supports different grant types to accommodate various scenarios, such as authorization code, implicit, resource owner password credentials, and client credentials grants.
+
+##### CONS
+
+- Managing tokens, including token expiration and refresh token handling, adds complexity to the implementation. Developers need to handle token expiration and refresh token flows properly to ensure continuous access.
+- If not implemented correctly, OAuth 2.0 can introduce security risks, such as insufficient validation of tokens, inadequate protection of sensitive information, and the potential for token leakage.
+- The flexibility of OAuth 2.0 can lead to complexity, especially for developers who are implementing it for the first time. Understanding and correctly implementing the various flows and grant types can be challenging.
