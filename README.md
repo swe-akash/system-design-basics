@@ -24,6 +24,7 @@ This repository aims to provide concise and comprehensive notes on various aspec
 
 In this section, you'll find fundamental concepts that form the basis of system design. Topics include:
 
+- How web works
 - Client-Server Architecture
 - Database Design
 - Networking Basics
