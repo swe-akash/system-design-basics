@@ -1,4 +1,4 @@
-# Common Request Headers in REST:
+## Common Request Headers in REST:
 
 - **Accept**: Specifies the media type(s) that the client is willing to receive from the server (e.g., application/json).
 - **Accept-Encoding**: Indicates the content encoding (e.g., gzip) that the client can understand, allowing the server to compress the response if supported.
@@ -15,7 +15,8 @@
 - **Referer**: Provides the URL of the referring page that led to the request, which can be used for analytics and security purposes.
 - **User-Agent**: Provides information about the client software making the request (e.g., browser type and version).
 
-# Common Response Headers in REST:
+## Common Response Headers in REST:
+
 - **Cache-Control**: Directives for caching mechanisms in both requests and responses (e.g., no-cache).
 - **Clear-Site-Data**: Instructs the client to clear specific types of stored data (e.g., cookies, cache) for the site, enhancing security and privacy.
 - **Content-Encoding**: Indicates the encoding used on the response body (e.g., gzip), allowing the client to decode the response correctly.
@@ -27,3 +28,11 @@ to know how much data to expect.
 - **Last-Modified**: Indicates the date and time at which the resource was last modified, allowing clients to make conditional requests based on the resource's state.
 - **Server**: Provides information about the server software handling the request (e.g., Apache, Nginx).
 - **Set-Cookie**: Used by the server to send cookies to the client, which can be stored and sent back in subsequent requests.
+
+## Security Headers
+
+- **X-Powered-By**: This header is often used to indicate the technology stack used by the web server. However, it can also provide attackers with information about potential vulnerabilities in the server software. It is recommended to remove or obfuscate this header to prevent attackers from gaining insights into the server's technology.
+- **Refferrer-Policy**: This header controls how much referrer information is sent with requests. It can help protect user privacy by limiting the amount of information shared with third-party websites. For example, setting it to "no-referrer" will prevent any referrer information from being sent.
+- **X-Content-Type-Options**: This header is used to prevent MIME type sniffing, which can lead to security vulnerabilities. Setting it to "nosniff" tells the browser to strictly follow the declared content type and not attempt to guess the content type based on the content itself.
+- **X-XSS-Protection**: This header is used to enable or disable the browser's built-in XSS protection. Setting it to "1; mode=block" will enable the protection and block any detected XSS attacks.
+- **Strict-Transport-Security (HSTS)**: This header is used to enforce secure connections by instructing the browser to only communicate with the server over HTTPS. It can help prevent man-in-the-middle attacks and ensure that sensitive data is transmitted securely.
